@@ -30,13 +30,7 @@ function submitForm() {
     }
 }
 
-function checkUndefine(...input) {
-    for (let i = 0; i < input.length; i++) {
-        if (!input) {
-            throw new Error("Input Kosong");
-        }
-    }
-}
+
 
 function displayResultHotspot() {
     const mode = localStorage.getItem("mode");

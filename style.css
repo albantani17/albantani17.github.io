@@ -72,6 +72,7 @@ form {
 
 #name {
     margin: 0 0 5px 0;
+    width: 100%;
 }
 #profile {
     width: 108px;
