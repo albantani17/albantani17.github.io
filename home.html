@@ -4,32 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style></style>
+    <link rel="stylesheet" href="style.css">
     <script src="main.js">
     </script>
 </head>
 <body onload="displayResultHome()">
-    <h1>config <span id="modeD"></span></h1>
-    <p>conf t</p>
-    <p>interface gpon-olt_1/<span class="slotD"></span>/<span class="gponD"></span></p>
-    <p>onu <span class="onuIdD"></span> type <span id="onuTypeD"></span> sn <span id="snD"></span></p>
-    <p>exit</p>
-    <p>interface gpon-onu_1/<span class="slotD"></span>/<span class="gponD"></span>:<span class="onuIdD"></span></p>
-    <p>name <span id="nameD"></span></p>
-    <p>sn-bind enable</p>
-    <p>tcont 1 name 1 profile UP-1G</p>
-    <p>gemport 1 name 1 tcont 1 queue 1</p>
-    <p>gemport 1 traffic-limit upstream DOWN-1G downstream DOWN-1G</p>
-    <p>service-port 1 vport 1 user-vlan <span class="vlanD"></span> vlan <span class="vlanD"></span></p>
-    <p>exit</p>
-    <p>pon-onu-mng gpon-onu_1/<span class="slotD"></span>/<span class="gponD"></span>:<span class="onuIdD"></span></p>
-    <p>service ServiceName gemport 1 vlan <span class="vlanD"></span></p>
-    <p>security-mgmt 1 state enable mode forward protocol web</p>
-    <p>wan-ip 1 mode pppoe username <span class="pppoeD"></span> password <span class="pppoeD"></span> vlan-profile <span id="profileD"></span> host 1</p>
-    <p>wan-ip 1 ping-response enable traceroute-response enable</p>
-    <p>security-mgmt 1 state enable mode forward protocol web</p>
-    <p>exit</p>
-    <p>exit</p>
-    <p>write</p>
+    <h1>CONFIG <span id="modeD"></span></h1>
+    <div id="editable" contenteditable="true">
+        <p>conf t</p>
+        <p>interface gpon-olt_1/<span class="slotD"></span>/<span class="gponD"></span></p>
+        <p>onu <span class="onuIdD"></span> type <span id="onuTypeD"></span> sn <span id="snD"></span></p>
+        <p>exit</p>
+        <p>interface gpon-onu_1/<span class="slotD"></span>/<span class="gponD"></span>:<span class="onuIdD"></span></p>
+        <p>name <span id="nameD"></span></p>
+        <p>sn-bind enable</p>
+        <p>tcont 1 name 1 profile UP-1G</p>
+        <p>gemport 1 name 1 tcont 1 queue 1</p>
+        <p>gemport 1 traffic-limit upstream DOWN-1G downstream DOWN-1G</p>
+        <p>service-port 1 vport 1 user-vlan <span class="vlanD"></span> vlan <span class="vlanD"></span></p>
+        <p>exit</p>
+        <p>pon-onu-mng gpon-onu_1/<span class="slotD"></span>/<span class="gponD"></span>:<span class="onuIdD"></span></p>
+        <p>service ServiceName gemport 1 vlan <span class="vlanD"></span></p>
+        <p>security-mgmt 1 state enable mode forward protocol web</p>
+        <p>wan-ip 1 mode pppoe username <span class="pppoeD"></span> password <span class="pppoeD"></span> vlan-profile <span id="profileD"></span> host 1</p>
+        <p>wan-ip 1 ping-response enable traceroute-response enable</p>
+        <p>security-mgmt 1 state enable mode forward protocol web</p>
+        <p>exit</p>
+        <p>exit</p>
+        <p>write</p>
+    </div>
 </body>
 </html>

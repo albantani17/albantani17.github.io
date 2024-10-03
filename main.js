@@ -21,9 +21,9 @@ function submitForm() {
     localStorage.setItem("profile",profile);
     localStorage.setItem("pppoe", pppoe)
 
-    if (mode == "home"){
+    if (mode == "HOME"){
         window.location.href = "home.html";
-    } else if (mode == "hotspot") {
+    } else if (mode == "HOTSPOT") {
         window.location.href = "hotspot.html";
     } else {
         alert("Invalid mode");
@@ -96,12 +96,4 @@ function displayResultHome() {
     document.getElementById("snD").innerHTML = sn;
     document.getElementById("nameD").innerHTML = name;
     document.getElementById("profileD").innerHTML = profile;
-}
-
-// Fungsi untuk mengupdate semua elemen dengan class tertentu
-function updateAllElements(className, value) {
-    const elements = document.getElementsByClassName(className);
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].innerHTML = value;
-    }
 }
