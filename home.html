@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+    <script>
+        function displayResult() {
+            const mode = localStorage.getItem("mode");
+            const slot = localStorage.getItem("slot");
+            const gpon = localStorage.getItem("gpon");
+            const onuId = localStorage.getItem("onuId");
+            const onuType = localStorage.getItem("onuType");
+            const sn = localStorage.getItem("sn");
+            const name = localStorage.getItem("name");
+            const vlan = localStorage.getItem("vlan");
+
+            // D = Display
+            document.getElementById("modeD").innerHTML = mode;
+            
+            // Mengupdate semua elemen dengan class slotD, gponD, onuIdD, dan vlanD
+            updateAllElements("slotD", slot);
+            updateAllElements("gponD", gpon);
+            updateAllElements("onuIdD", onuId);
+            updateAllElements("vlanD", vlan);
+
+            document.getElementById("onuTypeD").innerHTML = onuType;
+            document.getElementById("snD").innerHTML = sn;
+            document.getElementById("nameD").innerHTML = name;
+        }
+
+        // Fungsi untuk mengupdate semua elemen dengan class tertentu
+        function updateAllElements(className, value) {
+            const elements = document.getElementsByClassName(className);
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].innerHTML = value;
+            }
+        }
+    </script>
+</head>
+<body onload="displayResult()">
+    <h1>config <span id="modeD"></span></h1>
+    <p>conf t</p>
+    <p>interface gpon-olt_1/<span class="slotD"></span>/<span class="gponD"></span></p>
+    <p>onu <span class="onuIdD"></span> type <span id="onuTypeD"></span> sn <span id="snD"></span></p>
+    <p>exit</p>
+    <p>interface gpon-onu_1/<span class="slotD"></span>/<span class="gponD"></span>:<span class="onuIdD"></span></p>
+    <p>name <span id="nameD"></span></p>
+    <p>sn-bind enable</p>
+    <p>tcont 1 name 1 profile UP-1G</p>
+    <p>gemport 1 name 1 tcont 1 queue 1</p>
+    <p>gemport 1 traffic-limit upstream DOWN-1G downstream DOWN-1G</p>
+    <p>service-port 1 vport 1 user-vlan <span class="vlanD"></span> vlan <span class="vlanD"></span></p>
+    <p>exit</p>
+    <p>pon-onu-mng gpon-onu_1/<span class="slotD"></span>/<span class="gponD"></span>:<span class="onuIdD"></span></p>
+    <p>service ServiceName gemport 1 vlan <span class="vlanD"></span></p>
+    <p>security-mgmt 1 state enable mode forward protocol web</p>
+    <p>exit</p>
+    <p>exit</p>
+    <p>write</p>
+</body>
+</html>

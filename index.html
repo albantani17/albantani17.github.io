@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>ngoding</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function submitForm() {
+            const mode = document.getElementById("mainSelect").value;
+            const slot = document.getElementById("slot").value;
+            const gpon = document.getElementById("gpon").value;
+            const onuId = document.getElementById("onuId").value;
+            const onuType = document.getElementById("onuType").value;
+            const sn = document.getElementById("sn").value;
+            const name = document.getElementById("name").value;
+            const vlan = document.getElementById("vlan").value;
+        
+            localStorage.setItem("mode",mode);
+            localStorage.setItem("slot",slot);
+            localStorage.setItem("gpon", gpon);
+            localStorage.setItem("onuId",onuId);
+            localStorage.setItem("onuType",onuType);
+            localStorage.setItem("sn", sn);
+            localStorage.setItem("name", name)
+            localStorage.setItem("vlan",vlan)
+        
+            if (mode == "home"){
+                window.location.href = "home.html";
+            } else if (mode == "hotspot") {
+                window.location.href = "hotspot.html";
+            } else {
+                alert("Invalid mode");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="Container">
+        <h3>Script Generator</h3>
+        <div class="container-2">
+            
+            <form onsubmit="event.preventDefault(); submitForm();">
+                <label for="mainSelect"></label>
+                <select id="mainSelect">
+                    <option value="">--Pilih Mode--</option>
+                    <option value="home">Home</option>
+                    <option value="hotspot">Hotspot</option>
+                </select>
+                <select name="slot" id="slot">
+                    <option value="">Slot</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                <input type="number" name="gpon" id="gpon" placeholder="--GPON--">
+                <input type="number" name="onuid" id="onuId" placeholder="--ID--">
+                <input type="text" name="Name" id="name" placeholder="Nama">
+                <select name="type" id="onuType">
+                    <option value="">--onu type--</option>
+                    <option value="ZTE">ZTE</option>
+                    <option value="ZXHN-F609">ZXHN-F609</option>
+                    <option value="ZTE-F670L">ZXHN-F670L</option>
+                </select>
+                <input type="text" name="sn" id="sn" placeholder="SERIAL NUMBER">
+                <input type="text" name="vlan" id="vlan" placeholder="Vlan">
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
