@@ -28,11 +28,12 @@ p {
 }
 h3 {
     text-align: center;
+    font-size: 30px;
 }
 .container-2{
     margin: auto;
     width: 300px;
-    padding: 30px;
+    padding: 20px;
     border: 1px solid black;
     border-radius: 10px;
 }
@@ -40,6 +41,10 @@ form {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+}
+
+.border {
+    margin: 5px 0 5px 0;
 }
 
 #mainSelect {
@@ -56,3 +61,22 @@ form {
     width: 50px;
 }
 
+#onuType {
+    width: 108px;
+}
+
+#vlan {
+    width: 100px;
+}
+
+
+#name {
+    margin: 0 0 5px 0;
+}
+#profile {
+    width: 108px;
+}
+
+button {
+    margin: 20px auto 0px auto;
+}
