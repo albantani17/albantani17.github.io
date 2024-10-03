@@ -15,6 +15,8 @@
             const sn = localStorage.getItem("sn");
             const name = localStorage.getItem("name");
             const vlan = localStorage.getItem("vlan");
+            const profile = localStorage.getItem("profile");
+            const pppoe = localStorage.getItem("pppoe")
 
             // D = Display
             document.getElementById("modeD").innerHTML = mode;
@@ -24,10 +26,12 @@
             updateAllElements("gponD", gpon);
             updateAllElements("onuIdD", onuId);
             updateAllElements("vlanD", vlan);
+            updateAllElements("pppoeD", pppoe);
 
             document.getElementById("onuTypeD").innerHTML = onuType;
             document.getElementById("snD").innerHTML = sn;
             document.getElementById("nameD").innerHTML = name;
+            document.getElementById("profileD").innerHTML = profile;
         }
 
         // Fungsi untuk mengupdate semua elemen dengan class tertentu
@@ -55,6 +59,9 @@
     <p>exit</p>
     <p>pon-onu-mng gpon-onu_1/<span class="slotD"></span>/<span class="gponD"></span>:<span class="onuIdD"></span></p>
     <p>service ServiceName gemport 1 vlan <span class="vlanD"></span></p>
+    <p>security-mgmt 1 state enable mode forward protocol web</p>
+    <p>wan-ip 1 mode pppoe username <span class="pppoeD"></span> password <span class="pppoeD"></span> vlan-profile <span id="profileD"></span> host 1</p>
+    <p>wan-ip 1 ping-response enable traceroute-response enable</p>
     <p>security-mgmt 1 state enable mode forward protocol web</p>
     <p>exit</p>
     <p>exit</p>

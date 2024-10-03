@@ -5,42 +5,14 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>ngoding</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        function submitForm() {
-            const mode = document.getElementById("mainSelect").value;
-            const slot = document.getElementById("slot").value;
-            const gpon = document.getElementById("gpon").value;
-            const onuId = document.getElementById("onuId").value;
-            const onuType = document.getElementById("onuType").value;
-            const sn = document.getElementById("sn").value;
-            const name = document.getElementById("name").value;
-            const vlan = document.getElementById("vlan").value;
-        
-            localStorage.setItem("mode",mode);
-            localStorage.setItem("slot",slot);
-            localStorage.setItem("gpon", gpon);
-            localStorage.setItem("onuId",onuId);
-            localStorage.setItem("onuType",onuType);
-            localStorage.setItem("sn", sn);
-            localStorage.setItem("name", name)
-            localStorage.setItem("vlan",vlan)
-        
-            if (mode == "home"){
-                window.location.href = "home.html";
-            } else if (mode == "hotspot") {
-                window.location.href = "hotspot.html";
-            } else {
-                alert("Invalid mode");
-            }
-        }
-    </script>
+    <script src="main.js"></script>
 </head>
 <body>
     <div class="Container">
         <h3>Script Generator</h3>
         <div class="container-2">
             
-            <form onsubmit="event.preventDefault(); submitForm();">
+            <form onsubmit="event.preventDefault(); submitForm(); checkUndefine()">
                 <label for="mainSelect"></label>
                 <select id="mainSelect">
                     <option value="">--Pilih Mode--</option>
@@ -63,6 +35,7 @@
                 </select>
                 <input type="text" name="sn" id="sn" placeholder="SERIAL NUMBER">
                 <input type="text" name="vlan" id="vlan" placeholder="Vlan">
+                <input type="text" name="pppoe" id="pppoe" placeholder="PPPoE">
                 <select name="profile" id="profile">
                     <option value="">profile</option>
                     <option value="sibernet-3511">sibernet-3511</option>
