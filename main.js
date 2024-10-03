@@ -10,6 +10,14 @@ function submitForm() {
     const profile = document.getElementById("profile").value;
     const pppoe = document.getElementById("pppoe").value;
 
+    const varLoop = [mode,slot,gpon,onuId,onuType,sn,name,vlan,profile,pppoe];
+
+    for (i = 0; i < varLoop.length; i++) {
+        if (varLoop[i] == "") {
+            return alert("Please fill in all fields");
+        }
+    }
+
     localStorage.setItem("mode",mode);
     localStorage.setItem("slot",slot);
     localStorage.setItem("gpon", gpon);
@@ -28,6 +36,7 @@ function submitForm() {
     } else {
         alert("Invalid mode");
     }
+
 }
 
 
