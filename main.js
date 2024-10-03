@@ -37,3 +37,71 @@ function checkUndefine(...input) {
         }
     }
 }
+
+function displayResultHotspot() {
+    const mode = localStorage.getItem("mode");
+    const slot = localStorage.getItem("slot");
+    const gpon = localStorage.getItem("gpon");
+    const onuId = localStorage.getItem("onuId");
+    const onuType = localStorage.getItem("onuType");
+    const sn = localStorage.getItem("sn");
+    const name = localStorage.getItem("name");
+    const vlan = localStorage.getItem("vlan");
+
+    // D = Display
+    document.getElementById("modeD").innerHTML = mode;
+    
+    // Mengupdate semua elemen dengan class slotD, gponD, onuIdD, dan vlanD
+    updateAllElements("slotD", slot);
+    updateAllElements("gponD", gpon);
+    updateAllElements("onuIdD", onuId);
+    updateAllElements("vlanD", vlan);
+
+    document.getElementById("onuTypeD").innerHTML = onuType;
+    document.getElementById("snD").innerHTML = sn;
+    document.getElementById("nameD").innerHTML = name;
+}
+
+// Fungsi untuk mengupdate semua elemen dengan class tertentu
+function updateAllElements(className, value) {
+    const elements = document.getElementsByClassName(className);
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].innerHTML = value;
+    }
+}
+
+function displayResultHome() {
+    const mode = localStorage.getItem("mode");
+    const slot = localStorage.getItem("slot");
+    const gpon = localStorage.getItem("gpon");
+    const onuId = localStorage.getItem("onuId");
+    const onuType = localStorage.getItem("onuType");
+    const sn = localStorage.getItem("sn");
+    const name = localStorage.getItem("name");
+    const vlan = localStorage.getItem("vlan");
+    const profile = localStorage.getItem("profile");
+    const pppoe = localStorage.getItem("pppoe")
+
+    // D = Display
+    document.getElementById("modeD").innerHTML = mode;
+    
+    // Mengupdate semua elemen dengan class slotD, gponD, onuIdD, dan vlanD
+    updateAllElements("slotD", slot);
+    updateAllElements("gponD", gpon);
+    updateAllElements("onuIdD", onuId);
+    updateAllElements("vlanD", vlan);
+    updateAllElements("pppoeD", pppoe);
+
+    document.getElementById("onuTypeD").innerHTML = onuType;
+    document.getElementById("snD").innerHTML = sn;
+    document.getElementById("nameD").innerHTML = name;
+    document.getElementById("profileD").innerHTML = profile;
+}
+
+// Fungsi untuk mengupdate semua elemen dengan class tertentu
+function updateAllElements(className, value) {
+    const elements = document.getElementsByClassName(className);
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].innerHTML = value;
+    }
+}
