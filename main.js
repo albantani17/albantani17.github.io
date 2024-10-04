@@ -10,7 +10,7 @@ function submitForm() {
     const profile = document.getElementById("profile").value;
     const pppoe = document.getElementById("pppoe").value;
 
-    const varLoop = [mode,slot,gpon,onuId,onuType,sn,name,vlan,profile,pppoe];
+    const varLoop = [mode,slot,gpon,onuId,onuType,sn,name,vlan];
 
     for (i = 0; i < varLoop.length; i++) {
         if (varLoop[i] == "") {
