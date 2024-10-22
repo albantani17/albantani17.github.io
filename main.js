@@ -17,7 +17,7 @@ function submitForm() {
             return alert("Please fill in all fields");
         }
     }
-
+    onsubmit="event.preventDefault(); submitForm();"
     localStorage.setItem("mode",mode);
     localStorage.setItem("slot",slot);
     localStorage.setItem("gpon", gpon);

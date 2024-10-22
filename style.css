@@ -47,6 +47,9 @@ form {
     margin: 5px 0 5px 0;
 }
 
+#olt {
+    flex-basis: 400px;
+}
 #mainSelect {
     flex-basis: 400px;
 }

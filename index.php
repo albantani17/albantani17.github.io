@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,12 +13,19 @@
         <h3>SCRIPT GENERATOR</h3>
         <div class="container-2">
             
-            <form onsubmit="event.preventDefault(); submitForm();">
+            <form action="functions.php" method="POST" >
                 <label for="mainSelect"></label>
-                <select id="mainSelect">
+                <select name="olt" id="olt">
+                    <option value="majasari">Majasari</option>
+                    <option value="mandalawangi">Mandalawangi</option>
+                    <option value="saketi">Saketi</option>
+                    <option value="jiput">Jiput</option>
+                    <option value="padarincang">Padarincang</option>
+                </select>
+                <select name="mode" id="mainSelect">
                     <option value="">--Pilih Mode--</option>
-                    <option value="HOME">Home</option>
-                    <option value="HOTSPOT">Hotspot</option>
+                    <option value="home">Home</option>
+                    <option value="hotspot">Hotspot</option>
                 </select>
                 <div class="border">
                     <select name="slot" id="slot">
@@ -29,7 +37,7 @@
                     <input type="number" name="onuid" id="onuId" placeholder="ID">
                 </div>
                 <div class="border">
-                <input type="text" name="Name" id="name" placeholder="Nama">
+                <input type="text" name="nama" id="name" placeholder="Nama">
                     <select name="type" id="onuType">
                         <option value="">--onu type--</option>
                         <option value="ZTE">ZTE</option>
@@ -52,7 +60,5 @@
             </form>
         </div>
     </div>
-
-    <div>bLAKsldkasdkasjdoas</div>
 </body>
 </html>
